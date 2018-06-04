@@ -1,15 +1,33 @@
 {
-    "name": "watr/typeform",
-    "description": "A simple wrapper for Typeform API calls",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Ricardo Tapia",
-            "email": "rtapia92@gmail.com"
-        }
-    ],
-    "require": {
-        "guzzlehttp/guzzle": "~6.0"
+  "name": "watr/typeform",
+  "version": "0.1",
+  "description": "A simple wrapper for Typeform API calls",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ricardo Tapia",
+      "email": "rtapia92@gmail.com"
     }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~7",
+    "psy/psysh": "@stable"
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
+    ],
+    "psr-4": {
+      "WATR\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "WATR\\Test\\": "tests/"
+    }
+  }
 }
