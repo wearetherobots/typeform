@@ -25,8 +25,8 @@ $skeleton = new WATR\Typeform();
 
 ## Credits
 
-- [Ricardo Tapia][link-author]
-- [Joseph Le][link-author] for inspiration
+- [Ricardo Tapia](https://github.com/richipargo)
+- [Joseph Le] for inspiration
 
 ## License
 
