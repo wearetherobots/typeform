@@ -1,0 +1,15 @@
+{
+    "name": "watr/typeform",
+    "description": "A simple wrapper for Typeform API calls",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ricardo Tapia",
+            "email": "rtapia92@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    }
+}
