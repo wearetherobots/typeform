@@ -1,7 +1,5 @@
 # Typeform
 
-[![Software License][ico-license]](LICENSE.md)
-
 A PHP library for the Typeform API.
 
 ## Install
@@ -26,7 +24,7 @@ $skeleton = new WATR\Typeform();
 ## Credits
 
 - [Ricardo Tapia](https://github.com/richipargo)
-- [Joseph Le] for inspiration
+- [Joseph Le](https://github.com/SDHacks/typeform-php) for inspiration
 
 ## License
 
