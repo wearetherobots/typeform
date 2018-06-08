@@ -2,6 +2,7 @@
 namespace WATR;
 
 use GuzzleHttp\Client;
+use WATR\Models\Form;
 
 /**
  * Base Package wrapper for Typeform API
@@ -34,6 +35,7 @@ class Typeform
     public function getForm($formId)
     {
         $response = $this->http->get("/forms/" . $formId);
-        return $response;
+        $body = json_decode($response->getBody());
+        return new Form($body);
     }
 }

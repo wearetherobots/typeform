@@ -18,11 +18,20 @@ class TypeformTest extends TestCase
         $this->assertTrue(false);
     }
 
+    /**
+     * @vcr typeform_get_form
+     */
     public function testGetForm()
     {
+        \VCR\VCR::turnOn();
+        \VCR\VCR::insertCassette('typeform_get_form.yml');
+
         $this->initTypeform();
         $response = $this->typeform->getForm('wJV1Iz');
         eval(\Psy\sh());
         $this->assertTrue(false);
+
+        \VCR\VCR::eject();
+        \VCR\VCR::turnOff();
     }
 }
