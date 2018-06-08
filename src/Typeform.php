@@ -49,4 +49,8 @@ class Typeform
         eval(\Psy\sh());
         return new Form($body);
     }
+
+    public static function parseWebhook($json)
+    {
+    }
 }

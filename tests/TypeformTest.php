@@ -38,4 +38,11 @@ class TypeformTest extends TestCase
         \VCR\VCR::eject();
         \VCR\VCR::turnOff();
     }
+
+    public function testWebhook()
+    {
+        $data = file_get_contents('webhook.json');
+        eval(\Psy\sh());
+        $response = Typeform::parseWebhook("{}");
+    }
 }
