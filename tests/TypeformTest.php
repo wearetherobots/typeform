@@ -13,14 +13,6 @@ class TypeformTest extends TestCase
         $this->typeform = new Typeform(getenv('TYPEFORM_API_KEY'));
     }
 
-    public function testInit()
-    {
-        $this->assertTrue(false);
-    }
-
-    /**
-     * @vcr typeform_get_form
-     */
     public function testGetForm()
     {
         \VCR\VCR::turnOn();
@@ -28,8 +20,20 @@ class TypeformTest extends TestCase
 
         $this->initTypeform();
         $response = $this->typeform->getForm('wJV1Iz');
-        eval(\Psy\sh());
-        $this->assertTrue(false);
+        $this->assertTrue($response instanceof \WATR\Models\Form);
+
+        \VCR\VCR::eject();
+        \VCR\VCR::turnOff();
+    }
+
+    public function testGetResponses()
+    {
+        \VCR\VCR::turnOn();
+        \VCR\VCR::insertCassette('typeform_get_responses.yml');
+
+        $this->initTypeform();
+        $response = $this->typeform->getResponses('wJV1Iz');
+        $this->assertTrue($response instanceof \WATR\Models\Form);
 
         \VCR\VCR::eject();
         \VCR\VCR::turnOff();

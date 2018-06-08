@@ -26,16 +26,27 @@ class Typeform
 
     public function __construct($apiKey)
     {
-        $this->http = new Client([
-            'base_uri' => $this->baseUri
-        ]);
         $this->apiKey = $apiKey;
+        $this->http = new Client([
+            'base_uri' => $this->baseUri,
+            'headers' => [
+                'Authorization' => 'Bearer ' . $this->apiKey,
+            ]
+        ]);
     }
 
     public function getForm($formId)
     {
         $response = $this->http->get("/forms/" . $formId);
         $body = json_decode($response->getBody());
+        return new Form($body);
+    }
+
+    public function getResponses($formId)
+    {
+        $response = $this->http->get("/forms/" . $formId . "/responses");
+        $body = json_decode($response->getBody());
+        eval(\Psy\sh());
         return new Form($body);
     }
 }

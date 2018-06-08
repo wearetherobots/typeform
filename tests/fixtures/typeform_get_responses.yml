@@ -1,0 +1,29 @@
+
+-
+    request:
+        method: GET
+        url: 'https://api.typeform.com/forms/wJV1Iz/responses'
+        headers:
+            Host: api.typeform.com
+            Accept-Encoding: null
+            Authorization: 'Bearer BDSthFG2LMQtmHNvkCAhthUYrv8GPWFqzHeNoL1RTxQA'
+            User-Agent: 'GuzzleHttp/6.3.3 curl/7.60.0 PHP/7.2.6'
+            Accept: null
+    response:
+        status:
+            http_version: '1.1'
+            code: '200'
+            message: OK
+        headers:
+            Access-Control-Allow-Headers: 'X-Typeform-Key, Content-Type, Authorization, Typeform-Version'
+            Access-Control-Allow-Methods: 'GET, POST, PUT, PATCH, DELETE, OPTIONS'
+            Access-Control-Expose-Headers: 'Location, X-Request-Id'
+            Content-Type: application/json
+            Date: 'Fri, 08 Jun 2018 21:53:53 GMT'
+            Server: nginx
+            Typeform-Version: '2016-05-25'
+            X-Human: 'https://www.typeform.com/careers'
+            X-Request-Id: b8f9731d7a235500fa99d587020c2f2c
+            Content-Length: '776'
+            Connection: keep-alive
+        body: "{\"total_items\":1,\"page_count\":1,\"items\":[{\"landing_id\":\"b1a6549d653dd73376ac67d325f77fd7\",\"token\":\"b1a6549d653dd73376ac67d325f77fd7\",\"landed_at\":\"2018-06-08T21:53:10Z\",\"submitted_at\":\"2018-06-08T21:53:17Z\",\"metadata\":{\"user_agent\":\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36\",\"platform\":\"other\",\"referer\":\"https://unoimx.typeform.com/to/wJV1Iz\",\"network_id\":\"69c1b74006\",\"browser\":\"default\"},\"answers\":[{\"field\":{\"id\":\"SbbBBVRhqizl\",\"type\":\"multiple_choice\",\"ref\":\"8a3647e4-e2a0-4884-a29b-106d0db2c6d4\"},\"type\":\"choice\",\"choice\":{\"label\":\"bien\"}},{\"field\":{\"id\":\"hF1wy5nIrF8W\",\"type\":\"yes_no\",\"ref\":\"1f8fc4e5-9972-44f5-8c90-d7dbce4b3392\"},\"type\":\"boolean\",\"boolean\":true}],\"hidden\":{},\"calculated\":{\"score\":0}}]}\n"
