@@ -41,8 +41,8 @@ class TypeformTest extends TestCase
 
     public function testWebhook()
     {
-        $data = file_get_contents('webhook.json');
+        $data = json_decode(file_get_contents('./tests/webhook.json', FILE_USE_INCLUDE_PATH));
+        $response = Typeform::parseWebhook($data);
         eval(\Psy\sh());
-        $response = Typeform::parseWebhook("{}");
     }
 }

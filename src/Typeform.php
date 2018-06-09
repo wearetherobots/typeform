@@ -46,7 +46,6 @@ class Typeform
     {
         $response = $this->http->get("/forms/" . $formId . "/responses");
         $body = json_decode($response->getBody());
-        eval(\Psy\sh());
         return new Form($body);
     }
 
