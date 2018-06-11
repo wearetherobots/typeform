@@ -52,7 +52,7 @@ class Form
      */
     public $fields = [];
 
-    /**
+    /*
      * var Link settings
      */
     public $link = [];

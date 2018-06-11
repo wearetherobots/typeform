@@ -3,6 +3,7 @@ namespace WATR;
 
 use GuzzleHttp\Client;
 use WATR\Models\Form;
+use WATR\Models\WebhookResponse;
 
 /**
  * Base Package wrapper for Typeform API
@@ -51,5 +52,6 @@ class Typeform
 
     public static function parseWebhook($json)
     {
+        return new WebhookResponse($json);
     }
 }

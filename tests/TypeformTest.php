@@ -43,6 +43,7 @@ class TypeformTest extends TestCase
     {
         $data = json_decode(file_get_contents('./tests/webhook.json', FILE_USE_INCLUDE_PATH));
         $response = Typeform::parseWebhook($data);
+        $answer = $response->form_response->getAnswerByRef('readable_ref_email');
         eval(\Psy\sh());
     }
 }

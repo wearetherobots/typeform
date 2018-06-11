@@ -6,36 +6,6 @@
         headers:
             Host: api.typeform.com
             Accept-Encoding: null
-            User-Agent: 'GuzzleHttp/6.3.3 curl/7.60.0 PHP/7.2.6'
-            Accept: null
-    response:
-        status:
-            http_version: '1.1'
-            code: '200'
-            message: OK
-        headers:
-            Access-Control-Allow-Headers: 'X-Typeform-Key, Content-Type, Authorization, Typeform-Version'
-            Access-Control-Allow-Methods: 'GET, POST, PUT, PATCH, DELETE, OPTIONS'
-            Access-Control-Expose-Headers: 'Location, X-Request-Id'
-            Cache-Control: 'private, must-revalidate'
-            Content-Type: application/json
-            Date: 'Thu, 07 Jun 2018 21:44:21 GMT'
-            Last-Modified: 'Mon, 04 Jun 2018 23:29:27 GMT'
-            Server: nginx
-            Set-Cookie: 'device_view=full; expires=Sat, 07-Jul-2018 21:44:21 GMT; Max-Age=2592000; path=/; HttpOnly'
-            X-Human: 'https://www.typeform.com/careers'
-            X-Request-Id: eef0980363d23d6f33e2a5ea309e0d32
-            X-Ua-Compatible: 'IE=edge,chrome=1'
-            Content-Length: '1570'
-            Connection: keep-alive
-        body: '{"id":"wJV1Iz","title":"New typeform","theme":{"href":"https:\/\/api.typeform.com\/themes\/iiqmFb"},"workspace":{"href":"https:\/\/api.typeform.com\/workspaces\/12326762"},"settings":{"is_public":true,"is_trial":false,"language":"en","progress_bar":"proportion","show_progress_bar":true,"show_typeform_branding":true,"meta":{"allow_indexing":false}},"welcome_screens":[{"ref":"afbde5d6-4010-49ae-a68d-94f72c8105fb","title":"BIENVENIDO@","properties":{"show_button":true,"button_text":"COMENZAR"},"attachment":{"type":"image","href":"https:\/\/images.typeform.com\/images\/xfg9Faq6xp7k"}}],"thankyou_screens":[{"ref":"default_tys","title":"Done! Your information was sent perfectly.","properties":{"show_button":false,"share_icons":false}}],"fields":[{"id":"SbbBBVRhqizl","title":"\u00bfQue te pareci\u00f3 el curso de capacitaci\u00f3n inicial","ref":"8a3647e4-e2a0-4884-a29b-106d0db2c6d4","properties":{"randomize":false,"allow_multiple_selection":false,"allow_other_choice":false,"vertical_alignment":true,"choices":[{"id":"AydMQqPDPTsu","ref":"c08aa5c2-e3ef-4a82-be72-a8bab1afa82a","label":"bien"},{"id":"c0cGrqQfQPaz","ref":"475f28f3-18c9-4a0c-b06e-c26ea3910e94","label":"mal"},{"id":"amTvxQDhGArQ","ref":"78f11a32-fa0c-42dc-a975-bfba81a214fb","label":"regular"}]},"validations":{"required":false},"type":"multiple_choice"},{"id":"hF1wy5nIrF8W","title":"volver\u00edas a asistir a futuras capacitaciones","ref":"1f8fc4e5-9972-44f5-8c90-d7dbce4b3392","validations":{"required":false},"type":"yes_no"}],"_links":{"display":"https:\/\/unoimx.typeform.com\/to\/wJV1Iz"}}'
--
-    request:
-        method: GET
-        url: 'https://api.typeform.com/forms/wJV1Iz'
-        headers:
-            Host: api.typeform.com
-            Accept-Encoding: null
             Authorization: 'Bearer BDSthFG2LMQtmHNvkCAhthUYrv8GPWFqzHeNoL1RTxQA'
             User-Agent: 'GuzzleHttp/6.3.3 curl/7.60.0 PHP/7.2.6'
             Accept: null
@@ -50,12 +20,12 @@
             Access-Control-Expose-Headers: 'Location, X-Request-Id'
             Cache-Control: 'private, must-revalidate'
             Content-Type: application/json
-            Date: 'Fri, 08 Jun 2018 21:49:15 GMT'
+            Date: 'Mon, 11 Jun 2018 16:49:32 GMT'
             Last-Modified: 'Mon, 04 Jun 2018 23:29:27 GMT'
             Server: nginx
-            Set-Cookie: 'device_view=full; expires=Sun, 08-Jul-2018 21:49:15 GMT; Max-Age=2592000; path=/; HttpOnly'
+            Set-Cookie: 'device_view=full; expires=Wed, 11-Jul-2018 16:49:32 GMT; Max-Age=2592000; path=/; HttpOnly'
             X-Human: 'https://www.typeform.com/careers'
-            X-Request-Id: 1c2f40f20fe42705fcfa2e67e71535a5
+            X-Request-Id: 47965dac9bde2d9efcad1f110aba25d9
             X-Ua-Compatible: 'IE=edge,chrome=1'
             Content-Length: '1570'
             Connection: keep-alive
