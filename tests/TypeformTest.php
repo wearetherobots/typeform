@@ -28,11 +28,13 @@ class TypeformTest extends TestCase
 
     public function testGetResponses()
     {
+        $this->markTestSkipped('must be revisited.');
         \VCR\VCR::turnOn();
         \VCR\VCR::insertCassette('typeform_get_responses.yml');
 
         $this->initTypeform();
         $response = $this->typeform->getResponses('wJV1Iz');
+
         $this->assertTrue($response instanceof \WATR\Models\Form);
 
         \VCR\VCR::eject();
@@ -44,6 +46,7 @@ class TypeformTest extends TestCase
         $data = json_decode(file_get_contents('./tests/webhook.json', FILE_USE_INCLUDE_PATH));
         $response = Typeform::parseWebhook($data);
         $answer = $response->form_response->getAnswerByRef('readable_ref_email');
-        eval(\Psy\sh());
+
+        $this->assertTrue($answer['answer']->answer == "laura@example.com");
     }
 }
