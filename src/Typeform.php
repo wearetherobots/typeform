@@ -36,6 +36,9 @@ class Typeform
         ]);
     }
 
+    /**
+     * Get form information
+     */
     public function getForm($formId)
     {
         $response = $this->http->get("/forms/" . $formId);
@@ -43,6 +46,9 @@ class Typeform
         return new Form($body);
     }
 
+    /**
+     * Get form responses
+     */
     public function getResponses($formId)
     {
         $response = $this->http->get("/forms/" . $formId . "/responses");
@@ -50,6 +56,26 @@ class Typeform
         return new Form($body);
     }
 
+    /**
+     * Register webhook for form
+     */
+    public function registerWebhook(Form $form, string $url)
+    {
+        $response = $this->http->put(
+            "/forms/" . $form->id . "/webhooks/response",
+            [
+                'json' => [
+                    'url' => $url,
+                    'enabled' => true,
+                ]
+            ]
+        );
+        return json_decode($response->getBody());
+    }
+
+    /**
+     * Parse incoming webhook
+     */
     public static function parseWebhook($json)
     {
         return new WebhookResponse($json);

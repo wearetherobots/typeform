@@ -21,6 +21,8 @@ class TypeformTest extends TestCase
         $this->initTypeform();
         $response = $this->typeform->getForm('wJV1Iz');
         $this->assertTrue($response instanceof \WATR\Models\Form);
+        $webhook = $this->typeform->registerWebhook($response, "");
+        $this->assertTrue($webhook->enabled);
 
         \VCR\VCR::eject();
         \VCR\VCR::turnOff();
