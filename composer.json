@@ -4,6 +4,7 @@
   "description": "A simple wrapper for Typeform API calls",
   "type": "library",
   "license": "MIT",
+  "minimum-stability": "stable",
   "authors": [
     {
       "name": "Ricardo Tapia",
