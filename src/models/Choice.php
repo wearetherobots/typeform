@@ -28,7 +28,10 @@ class Choice
     public function __construct($object)
     {
         $this->id = $object->id;
-        $this->ref = $object->ref;
+        if(isset($object->ref))
+        {
+            $this->ref = $object->ref;
+        }
         $this->label = $object->label;
     }
 }

@@ -1,201 +1,104 @@
 {
-  "event_id": "LtWXD3crgy",
+  "event_id": "01CGFB453QDFS36NJSJDTSNX7C",
   "event_type": "form_response",
   "form_response": {
-    "form_id": "lT4Z3j",
-    "token": "a3a12ec67a1365927098a606107fac15",
-    "submitted_at": "2018-01-18T18:17:02Z",
-    "landed_at": "2018-01-18T18:07:02Z",
-    "calculated": {
-      "score": 9
+    "form_id": "zFEZkg",
+    "token": "0241f3147b78d932d2247a2fb1601f88",
+    "landed_at": "2018-06-20T19:35:14Z",
+    "submitted_at": "2018-06-20T19:35:44Z",
+    "hidden": {
+      "name": "ricardo"
     },
     "definition": {
-      "id": "lT4Z3j",
-      "title": "Webhooks example",
+      "id": "zFEZkg",
+      "title": "Instrumento Bojque",
       "fields": [
         {
-          "id": "DlXFaesGBpoF",
-          "title": "Thanks, {{answer_60906475}}! What's it like where you live? Tell us in a few sentences.",
-          "type": "long_text",
-          "ref": "readable_ref_long_text",
-            "allow_multiple_selections": false,
-            "allow_other_choice": false
+          "id": "mayiEmKGn8ar",
+          "title": "...",
+          "type": "file_upload",
+          "ref": "1c7c77c6-d89c-40bb-8723-91bd1108698d",
+          "properties": {}
         },
         {
-          "id": "SMEUb7VJz92Q",
-          "title": "If you're OK with our city management following up if they have further questions, please give us your email address.",
-          "type": "email",
-          "ref": "readable_ref_email",
-          "allow_multiple_selections": false,
-          "allow_other_choice": false
-        },
-        {
-          "id": "JwWggjAKtOkA",
-          "title": "What is your first name?",
-          "type": "short_text",
-          "ref": "readable_ref_short_text",
-          "allow_multiple_selections": false,
-          "allow_other_choice": false
-        },
-        {
-          "id": "KoJxDM3c6x8h",
-          "title": "When did you move to the place where you live?",
-          "type": "date",
-          "ref": "readable_ref_date",
-          "allow_multiple_selections": false,
-          "allow_other_choice": false
-        },
-        {
-          "id": "PNe8ZKBK8C2Q",
-          "title": "Which pictures do you like? You can choose as many as you like.",
-          "type": "picture_choice",
-          "ref": "readable_ref_picture_choice",
-          "allow_multiple_selections": true,
-          "allow_other_choice": false
-        },
-        {
-          "id": "Q7M2XAwY04dW",
-          "title": "On a scale of 1 to 5, what rating would you give the weather in Sydney? 1 is poor weather, 5 is excellent weather",
-          "type": "number",
-          "ref": "readable_ref_number1",
-          "allow_multiple_selections": false,
-          "allow_other_choice": false
-        },
-        {
-          "id": "gFFf3xAkJKsr",
-          "title": "By submitting this form, you understand and accept that we will share your answers with city management. Your answers will be anonymous will not be shared.",
-          "type": "legal",
-          "ref": "readable_ref_legal",
-          "allow_multiple_selections": false,
-          "allow_other_choice": false
-        },
-        {
-          "id": "k6TP9oLGgHjl",
-          "title": "Which of these cities is your favorite?",
-          "type": "multiple_choice",
-          "ref": "readable_ref_multiple_choice",
-          "allow_multiple_selections": false,
-          "allow_other_choice": false
-        },
-        {
-          "id": "RUqkXSeXBXSd",
-          "title": "Do you have a favorite city we haven't listed?",
-          "type": "yes_no",
-          "ref": "readable_ref_yes_no",
-          "allow_multiple_selections": false,
-          "allow_other_choice": false
-        },
-        {
-          "id": "NRsxU591jIW9",
-          "title": "How important is the weather to your opinion about a city? 1 is not important, 5 is very important.",
+          "id": "Grw15FYtYMfq",
+          "title": "Los docentes se mantienen atentos a cualquier\roportunidad de aprendizaje, exploran nuevas \rformas de generar oportunidades para que los\restudiantes aprendan y creen cosas nuevas.",
           "type": "opinion_scale",
-          "ref": "readable_ref_opinion_scale",
-          "allow_multiple_selections": false,
-          "allow_other_choice": false
+          "ref": "0d00cc8b-527b-4e46-8fe4-fb41d17f40fc",
+          "properties": {}
         },
         {
-          "id": "WOTdC00F8A3h",
-          "title": "How would you rate the weather where you currently live? 1 is poor weather, 5 is excellent weather.",
+          "id": "RKHPki7xf2pS",
+          "title": "Los docentes intercambian buenas prácticas.\rPlanean y diseñan, eventos y proyectos\r involucrando a todas las academias e idiomas.",
+          "type": "opinion_scale",
+          "ref": "e9f1e5d7-a10c-4176-8116-f5cf38470004",
+          "properties": {}
+        },
+        {
+          "id": "MRQu76IamXGM",
+          "title": "Los docentes mantienen comunicación constante\rcon todos los actores involucrados en el proceso \rde aprendizaje de sus alumnos, propiciando en\rtodo momento un ambiente de trabajo cordial\ry agradable.",
           "type": "rating",
-          "ref": "readable_ref_rating",
-          "allow_multiple_selections": false,
-          "allow_other_choice": false
+          "ref": "094ade24-6b23-47d6-b2c6-1c70b1204f7f",
+          "properties": {}
         },
         {
-          "id": "pn48RmPazVdM",
-          "title": "On a scale of 1 to 5, what rating would you give the general quality of life in Sydney? 1 is poor, 5 is excellent",
-          "type": "number",
-          "ref": "readable_ref_number2",
-          "allow_multiple_selections": false,
-          "allow_other_choice": false
-        }
+          "id": "eWiQwbjm1xVK",
+          "title": "La retroalimentación al trabajo docente siempre\res bien recibido y tomado en consideración para \rajustes y cambios inmediatos.",
+          "type": "rating",
+          "ref": "21928383-c39c-4486-934d-e12f63bb04c8",
+          "properties": {}
+        },
+        {
+          "id": "st1BGqCGYktG",
+          "title": "El error es visto como una oportunidad\r de aprendizaje.",
+          "type": "rating",
+          "ref": "57aa4a0a-62ee-4512-843c-27d0f7e03b34",
+          "properties": {}
+        },
+        {
+          "id": "QcJTCkaLyt6O",
+          "title": "Los docentes planean sus clases y realizan ajustes\ra las mismas tomando en consideración las\r distintas habilidades y preferencias de\raprendizaje de sus alumnos.",
+          "type": "opinion_scale",
+          "ref": "e8f7bb1c-15cc-4214-9967-578f3bef1997",
+          "properties": {}
+        },
+        {
+          "id": "tpYOOAkIgCKn",
+          "title": "Pregunta de lo que quieras",
+          "type": "multiple_choice",
+          "ref": "f0f62481-23bf-48df-86a3-30e393c0e4d9",
+          "properties": {},
+          "choices": [
+            {
+              "id": "eZLXzYZW5vL7",
+              "label": "Opcion 1"
+            },
+            {
+              "id": "hnoLsVnhg1z8",
+              "label": "opción"
+            },
+            {
+              "id": "nheZ417Tgg9v",
+              "label": "2"
+            }
           ]
+        }
+      ]
     },
     "answers": [
       {
-        "type": "text",
-        "text": "It's cold right now! I live in an older medium-sized city with a university. Geographically, the area is hilly.",
+        "type": "file_url",
+        "file_url": "https://admin.typeform.com/form/results/file/download/zFEZkg/mayiEmKGn8ar/e1ea2a9d3b47-cuadro_1.svg",
         "field": {
-          "id": "DlXFaesGBpoF",
-          "type": "long_text"
-        }
-      },
-      {
-        "type": "email",
-        "email": "laura@example.com",
-        "field": {
-          "id": "SMEUb7VJz92Q",
-          "type": "email"
-        }
-      },
-      {
-        "type": "text",
-        "text": "Laura",
-        "field": {
-          "id": "JwWggjAKtOkA",
-          "type": "short_text"
-        }
-      },
-      {
-        "type": "date",
-        "date": "2005-10-15",
-        "field": {
-          "id": "KoJxDM3c6x8h",
-          "type": "date"
-        }
-      },
-      {
-        "type": "choices",
-        "choices": {
-          "labels": [
-            "London",
-            "Sydney"
-          ]
-        },
-        "field": {
-          "id": "PNe8ZKBK8C2Q",
-          "type": "picture_choice"
-        }
-      },
-      {
-        "type": "number",
-        "number": 5,
-        "field": {
-          "id": "Q7M2XAwY04dW",
-          "type": "number"
-        }
-      },
-      {
-        "type": "boolean",
-        "boolean": true,
-        "field": {
-          "id": "gFFf3xAkJKsr",
-          "type": "legal"
-        }
-      },
-      {
-        "type": "choice",
-        "choice": {
-          "label": "London"
-        },
-        "field": {
-          "id": "k6TP9oLGgHjl",
-          "type": "multiple_choice"
-        }
-      },
-      {
-        "type": "boolean",
-        "boolean": false,
-        "field": {
-          "id": "RUqkXSeXBXSd",
-          "type": "yes_no"
+          "id": "mayiEmKGn8ar",
+          "type": "file_upload"
         }
       },
       {
         "type": "number",
         "number": 2,
         "field": {
-          "id": "NRsxU591jIW9",
+          "id": "Grw15FYtYMfq",
           "type": "opinion_scale"
         }
       },
@@ -203,7 +106,15 @@
         "type": "number",
         "number": 3,
         "field": {
-          "id": "WOTdC00F8A3h",
+          "id": "RKHPki7xf2pS",
+          "type": "opinion_scale"
+        }
+      },
+      {
+        "type": "number",
+        "number": 5,
+        "field": {
+          "id": "MRQu76IamXGM",
           "type": "rating"
         }
       },
@@ -211,10 +122,37 @@
         "type": "number",
         "number": 4,
         "field": {
-          "id": "pn48RmPazVdM",
-          "type": "number"
+          "id": "eWiQwbjm1xVK",
+          "type": "rating"
+        }
+      },
+      {
+        "type": "number",
+        "number": 3,
+        "field": {
+          "id": "st1BGqCGYktG",
+          "type": "rating"
+        }
+      },
+      {
+        "type": "number",
+        "number": 2,
+        "field": {
+          "id": "QcJTCkaLyt6O",
+          "type": "opinion_scale"
+        }
+      },
+      {
+        "type": "choice",
+        "choice": {
+          "label": "opción"
+        },
+        "field": {
+          "id": "tpYOOAkIgCKn",
+          "type": "multiple_choice"
         }
       }
     ]
   }
 }
+

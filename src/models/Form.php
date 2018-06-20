@@ -57,6 +57,11 @@ class Form
      */
     public $link = [];
 
+    /*
+     * var '' settings
+     */
+    public $hidden = [];
+
     /**
      * Form constructor
      */
@@ -69,9 +74,12 @@ class Form
         $this->workspace = new Reference($json->workspace);
         $this->settings = new Setting($json->settings);
 
-        foreach($json->welcome_screens as $screen)
+        if(isset($json->welcome_screens))
         {
-            array_push($this->welcome_screens, new Screen($screen));
+            foreach($json->welcome_screens as $screen)
+            {
+                array_push($this->welcome_screens, new Screen($screen));
+            }
         }
 
         foreach($json->thankyou_screens as $screen)
@@ -84,6 +92,14 @@ class Form
         foreach($json->fields as $field)
         {
             array_push($this->fields, new Field($field));
+        }
+
+        if(isset($json->hidden))
+        {
+            foreach($json->hidden as $hid)
+            {
+                array_push($this->hidden, $hid);
+            }
         }
     }
 }

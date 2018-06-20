@@ -48,13 +48,16 @@ class Field
         $this->id = $object->id;
         $this->title = $object->title;
         $this->ref = $object->ref;
+        $this->type = $object->type;
 
         if(isset($object->properties))
         {
-            $this->properties = new FieldProperty($object->properties);
+            $this->properties = new FieldProperty($object->properties, $this->type == "group");
         }
 
-        $this->validations = new Validation($object->validations);
-        $this->type = $object->type;
+        if(isset($object->validations))
+        {
+            $this->validations = new Validation($object->validations);
+        }
     }
 }

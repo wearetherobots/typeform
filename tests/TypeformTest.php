@@ -19,9 +19,9 @@ class TypeformTest extends TestCase
         \VCR\VCR::insertCassette('typeform_get_form.yml');
 
         $this->initTypeform();
-        $response = $this->typeform->getForm('wJV1Iz');
+        $response = $this->typeform->getForm('zFEZkg');
         $this->assertTrue($response instanceof \WATR\Models\Form);
-        $webhook = $this->typeform->registerWebhook($response, "");
+        $webhook = $this->typeform->registerWebhook($response, "http://85c8d4ca.ngrok.io");
         $this->assertTrue($webhook->enabled);
 
         \VCR\VCR::eject();
@@ -35,7 +35,7 @@ class TypeformTest extends TestCase
         \VCR\VCR::insertCassette('typeform_get_responses.yml');
 
         $this->initTypeform();
-        $response = $this->typeform->getResponses('wJV1Iz');
+        $response = $this->typeform->getResponses('zFEZkg');
 
         $this->assertTrue($response instanceof \WATR\Models\Form);
 
@@ -47,8 +47,10 @@ class TypeformTest extends TestCase
     {
         $data = json_decode(file_get_contents('./tests/webhook.json', FILE_USE_INCLUDE_PATH));
         $response = Typeform::parseWebhook($data);
-        $answer = $response->form_response->getAnswerByRef('readable_ref_email');
+        $answer = $response->form_response->getAnswerByRef('0d00cc8b-527b-4e46-8fe4-fb41d17f40fc');
 
-        $this->assertTrue($answer['answer']->answer == "laura@example.com");
+        $this->assertTrue($answer != -1);
+
+        $this->assertTrue($answer['answer']->answer === 2);
     }
 }

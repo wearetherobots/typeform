@@ -33,9 +33,14 @@ class FormResponse
     public $definition;
 
     /**
-     * var Answer[] settings
+     * @var Answer[] settings
      */
     public $answers = [];
+
+    /*
+     * @var '' settings
+     */
+    public $hidden = [];
 
     /**
      * Constructor
@@ -58,6 +63,14 @@ class FormResponse
         {
             array_push($this->answers, new Answer($answer));
         }
+
+        if(isset($json->hidden))
+        {
+            foreach($json->hidden as $hid)
+            {
+                array_push($this->hidden, $hid);
+            }
+        }
     }
 
     /**
@@ -68,11 +81,11 @@ class FormResponse
         $field = $this->definition->getFieldByRef($ref);
         $result = null;
 
-        if($ref == -1){ return -1; }
+        if($ref === -1 || $field === -1){ return -1; }
 
         foreach($this->answers as $answer)
         {
-            if($answer->field_identifier == $field->id)
+            if($answer->field_identifier === $field->id)
             {
                 $result = $answer;
             }
