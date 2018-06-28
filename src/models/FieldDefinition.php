@@ -54,7 +54,10 @@ class FieldDefinition
     {
         $this->id = $object->id;
         $this->title = $object->title;
-        $this->ref = $object->ref;
+        if(isset($object->ref))
+        {
+            $this->ref = $object->ref;
+        }
         $this->type = $object->type;
         if(isset($object->randomize))
         {
