@@ -3,6 +3,7 @@ namespace WATR;
 
 use GuzzleHttp\Client;
 use WATR\Models\Form;
+use WATR\Models\FormResponse;
 use WATR\Models\WebhookResponse;
 
 /**
@@ -53,7 +54,13 @@ class Typeform
     {
         $response = $this->http->get("/forms/" . $formId . "/responses");
         $body = json_decode($response->getBody());
-        return new Form($body);
+        $responses = [];
+        if (isset($body->items)) {
+            foreach ($body->items as $item) {
+                $responses[] = new FormResponse($item);
+            }
+        }
+        return $responses;
     }
 
     /**
