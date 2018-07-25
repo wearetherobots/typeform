@@ -57,11 +57,14 @@ class FormResponse
             'Y-m-d\TH:i:s\Z',
             $json->landed_at
         );
-        $this->definition = new FormDefinition($json->definition);
+        if (isset($json->definition)) {
+            $this->definition = new FormDefinition($json->definition);
+        }
 
-        foreach($json->answers as $answer)
-        {
-            array_push($this->answers, new Answer($answer));
+        if (isset($json->answers)) {
+            foreach ($json->answers as $answer) {
+                array_push($this->answers, new Answer($answer));
+            }
         }
 
         if(isset($json->hidden))
