@@ -82,7 +82,7 @@ class Form
             }
         }
 
-        if (isset(($json->thankyou_screens)) && $json->thankyou_screens instanceof \Iterator) {
+        if (isset($json->thankyou_screens) && $json->thankyou_screens instanceof \Iterator) {
             foreach ($json->thankyou_screens as $screen) {
                 array_push($this->thankyou_screens, new Screen($screen));
             }
@@ -90,7 +90,7 @@ class Form
 
         $this->settings = new Link($json->_links);
 
-        if (isset(($json->fields)) && $json->fields instanceof \Iterator) {
+        if (isset($json->fields) && $json->fields instanceof \Iterator) {
             foreach ($json->fields as $field) {
                 array_push($this->fields, new Field($field));
             }
