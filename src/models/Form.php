@@ -82,16 +82,18 @@ class Form
             }
         }
 
-        foreach($json->thankyou_screens as $screen)
-        {
-            array_push($this->thankyou_screens, new Screen($screen));
+        if (isset(($json->thankyou_screens)) && $json->thankyou_screens instanceof \Iterator) {
+            foreach ($json->thankyou_screens as $screen) {
+                array_push($this->thankyou_screens, new Screen($screen));
+            }
         }
 
         $this->settings = new Link($json->_links);
 
-        foreach($json->fields as $field)
-        {
-            array_push($this->fields, new Field($field));
+        if (isset(($json->fields)) && $json->fields instanceof \Iterator) {
+            foreach ($json->fields as $field) {
+                array_push($this->fields, new Field($field));
+            }
         }
 
         if(isset($json->hidden))
