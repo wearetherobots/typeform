@@ -7,7 +7,7 @@ A PHP library for the Typeform API.
 Via Composer
 
 ``` bash
-$ composer require wearetherobots/typeform
+$ composer require watr/typeform
 ```
 
 ## Usage
