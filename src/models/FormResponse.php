@@ -69,9 +69,9 @@ class FormResponse
 
         if(isset($json->hidden))
         {
-            foreach($json->hidden as $hid)
+            foreach($json->hidden as $key => $val)
             {
-                array_push($this->hidden, $hid);
+                $this->hidden[$key] = $val;
             }
         }
     }
