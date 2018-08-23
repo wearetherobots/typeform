@@ -47,7 +47,6 @@ class FormResponse
      */
     public function __construct($json)
     {
-        $this->form_id = $json->form_id;
         $this->token = $json->token;
         $this->submitted_at = \DateTime::createFromFormat(
             'Y-m-d\TH:i:s\Z',

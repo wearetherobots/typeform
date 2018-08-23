@@ -19,7 +19,8 @@ class TypeformTest extends TestCase
         \VCR\VCR::insertCassette('typeform_get_form.yml');
 
         $this->initTypeform();
-        $response = $this->typeform->getForm('zFEZkg');
+        $response = $this->typeform->getForm('zOwLuu');
+        $this->typeform->addHiddenFields($response, ["test", "test2"]);
         $this->assertTrue($response instanceof \WATR\Models\Form);
         $webhook = $this->typeform->registerWebhook($response, "http://85c8d4ca.ngrok.io");
         $this->assertTrue($webhook->enabled);
@@ -30,14 +31,14 @@ class TypeformTest extends TestCase
 
     public function testGetResponses()
     {
-        $this->markTestSkipped('must be revisited.');
+        // $this->markTestSkipped('must be revisited.');
         \VCR\VCR::turnOn();
         \VCR\VCR::insertCassette('typeform_get_responses.yml');
 
         $this->initTypeform();
-        $response = $this->typeform->getResponses('zFEZkg');
+        $response = $this->typeform->getResponses('zOwLuu');
 
-        $this->assertTrue($response instanceof \WATR\Models\Form);
+        $this->assertTrue(is_array($response));
 
         \VCR\VCR::eject();
         \VCR\VCR::turnOff();

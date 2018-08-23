@@ -63,10 +63,16 @@ class Form
     public $hidden = [];
 
     /**
+     * @var raw form
+     */
+    private $raw;
+
+    /**
      * Form constructor
      */
     public function __construct($json)
     {
+        $this->raw = $json;
         $this->id = $json->id;
         $this->title = $json->title;
 
@@ -103,5 +109,25 @@ class Form
                 array_push($this->hidden, $hid);
             }
         }
+    }
+
+    /**
+     * Add hidden fields
+     */
+    public function addHiddenFields($fields)
+    {
+        if(!isset($this->raw->hidden))
+        {
+            $this->raw->hidden = $fields;
+        } else {
+            $fields = array_diff($fields, $this->raw->hidden);
+
+            $this->raw->hidden = array_merge($fields, $this->raw->hidden);
+        }
+    }
+
+    public function getRaw()
+    {
+        return $this->raw;
     }
 }

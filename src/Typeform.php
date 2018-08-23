@@ -80,6 +80,19 @@ class Typeform
         return json_decode($response->getBody());
     }
 
+
+    public function addHiddenFields(Form $form, $fields)
+    {
+        $form->addHiddenFields($fields);
+
+        $response = $this->http->put(
+            "/forms/" . $form->id,
+            [
+              'json' => (array) $form->getRaw(),
+            ]
+        );
+    }
+
     /**
      * Parse incoming webhook
      */
