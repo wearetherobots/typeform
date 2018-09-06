@@ -66,10 +66,10 @@ class Typeform
     /**
      * Register webhook for form
      */
-    public function registerWebhook(Form $form, string $url)
+    public function registerWebhook(Form $form, string $url, string $tag = "response")
     {
         $response = $this->http->put(
-            "/forms/" . $form->id . "/webhooks/response",
+            "/forms/" . $form->id . "/webhooks/" . $tag,
             [
                 'json' => [
                     'url' => $url,
