@@ -77,8 +77,13 @@ class Form
         $this->title = $json->title;
 
         $this->theme = new Reference($json->theme);
-        $this->workspace = new Reference($json->workspace);
-        $this->settings = new Setting($json->settings);
+        if (isset($json->workspace)) {
+            $this->workspace = new Reference($json->workspace);
+        }
+
+        if (isset($json->settings)) {
+            $this->settings = new Setting($json->settings);
+        }
 
         if(isset($json->welcome_screens))
         {

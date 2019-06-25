@@ -38,6 +38,22 @@ class Typeform
     }
 
     /**
+     * Get forms information
+     */
+    public function getForms()
+    {
+        $response = $this->http->get("/forms");
+        $body = json_decode($response->getBody());
+        $forms = [];
+        if (isset($body->items)) {
+            foreach ($body->items as $item) {
+                $forms[] = new Form($item);
+            }
+        }
+        return $forms;
+    }
+
+    /**
      * Get form information
      */
     public function getForm($formId)
