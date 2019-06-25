@@ -2,6 +2,8 @@
 namespace WATR;
 
 use GuzzleHttp\Client;
+use WATR\Iterators\AfterIterator;
+use WATR\Iterators\PageIterator;
 use WATR\Models\Form;
 use WATR\Models\FormResponse;
 use WATR\Models\WebhookResponse;
@@ -38,19 +40,12 @@ class Typeform
     }
 
     /**
-     * Get forms information
+     * @param array $params
+     * @return PageIterator
      */
-    public function getForms()
+    public function getForms(array $params = [])
     {
-        $response = $this->http->get("/forms");
-        $body = json_decode($response->getBody());
-        $forms = [];
-        if (isset($body->items)) {
-            foreach ($body->items as $item) {
-                $forms[] = new Form($item);
-            }
-        }
-        return $forms;
+        return new PageIterator($this->http, '/forms', $params, Form::class);
     }
 
     /**
@@ -66,17 +61,18 @@ class Typeform
     /**
      * Get form responses
      */
-    public function getResponses($formId, $query = array("page_size" => 50))
+    public function getResponses($formId, array $params = [])
     {
-        $response = $this->http->get("/forms/" . $formId . "/responses", $query);
-        $body = json_decode($response->getBody());
-        $responses = [];
-        if (isset($body->items)) {
-            foreach ($body->items as $item) {
-                $responses[] = new FormResponse($item);
-            }
-        }
-        return $responses;
+        return new AfterIterator($this->http, "/forms/" . $formId . "/responses", $params, Form::class);
+//        $response = $this->http->get("/forms/" . $formId . "/responses");
+//        $body = json_decode($response->getBody());
+//        $responses = [];
+//        if (isset($body->items)) {
+//            foreach ($body->items as $item) {
+//                $responses[] = new FormResponse($item);
+//            }
+//        }
+//        return $responses;
     }
 
     /**
