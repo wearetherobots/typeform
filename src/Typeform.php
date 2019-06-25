@@ -3,7 +3,9 @@ namespace WATR;
 
 use GuzzleHttp\Client;
 use WATR\Iterators\AfterIterator;
+use WATR\Iterators\FormIterator;
 use WATR\Iterators\PageIterator;
+use WATR\Iterators\ResoinseIterator;
 use WATR\Models\Form;
 use WATR\Models\FormResponse;
 use WATR\Models\WebhookResponse;
@@ -41,11 +43,11 @@ class Typeform
 
     /**
      * @param array $params
-     * @return PageIterator
+     * @return FormIterator
      */
     public function getForms(array $params = [])
     {
-        return new PageIterator($this->http, '/forms', $params, Form::class);
+        return new FormIterator($this->http, '/forms', $params);
     }
 
     /**
@@ -63,7 +65,7 @@ class Typeform
      */
     public function getResponses($formId, array $params = [])
     {
-        return new AfterIterator($this->http, "/forms/" . $formId . "/responses", $params, Form::class);
+        return new ResoinseIterator($this->http, "/forms/" . $formId . "/responses", $params);
 //        $response = $this->http->get("/forms/" . $formId . "/responses");
 //        $body = json_decode($response->getBody());
 //        $responses = [];

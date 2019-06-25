@@ -42,11 +42,15 @@ class FormResponse
      */
     public $hidden = [];
 
+    public $raw;
+
     /**
      * Constructor
      */
     public function __construct($json)
     {
+        $this->raw = $json;
+
         if (isset($json->form_id)) {
             $this->form_id = $json->form_id;
         }
@@ -100,5 +104,10 @@ class FormResponse
             'field' => $field,
             'answer' => $result
         ];
+    }
+
+    public function getRaw()
+    {
+        return $this->raw;
     }
 }

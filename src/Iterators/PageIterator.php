@@ -4,12 +4,11 @@ namespace WATR\Iterators;
 use GuzzleHttp\Client;
 use Iterator;
 
-class PageIterator implements Iterator
+abstract class PageIterator implements Iterator
 {
     protected $client;
     protected $endpoint;
     protected $params;
-    protected $classType;
     protected $position;
     protected $response;
     protected $requestDelayMs;
@@ -17,11 +16,10 @@ class PageIterator implements Iterator
     public $total_items;
     public $error;
 
-    public function __construct(Client $client, string $endpoint, array $params, $classType, int $requestDelayMs = 1000) {
+    public function __construct(Client $client, string $endpoint, array $params, int $requestDelayMs = 1000) {
         $this->client = $client;
         $this->endpoint = $endpoint;
         $this->params = $params;
-        $this->classType = $classType;
         $this->requestDelayMs = $requestDelayMs;
     }
 
@@ -31,10 +29,7 @@ class PageIterator implements Iterator
      * @return mixed Can return any type.
      * @since 5.0.0
      */
-    public function current()
-    {
-        return new $this->classType(current($this->response));
-    }
+    abstract public function current();
 
     /**
      * Move forward to next element

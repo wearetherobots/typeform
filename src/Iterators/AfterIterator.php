@@ -4,12 +4,11 @@ namespace WATR\Iterators;
 use GuzzleHttp\Client;
 use Iterator;
 
-class AfterIterator implements Iterator
+abstract class AfterIterator implements Iterator
 {
     protected $client;
     protected $endpoint;
     protected $params;
-    protected $classType;
     protected $position;
     protected $response;
     protected $requestDelayMs;
@@ -18,11 +17,10 @@ class AfterIterator implements Iterator
     public $total_items;
     public $error;
 
-    public function __construct(Client $client, string $endpoint, array $params, $classType, int $requestDelayMs = 1000) {
+    public function __construct(Client $client, string $endpoint, array $params, int $requestDelayMs = 1000) {
         $this->client = $client;
         $this->endpoint = $endpoint;
         $this->params = $params;
-        $this->classType = $classType;
         $this->requestDelayMs = $requestDelayMs;
     }
 
@@ -32,12 +30,7 @@ class AfterIterator implements Iterator
      * @return mixed Can return any type.
      * @since 5.0.0
      */
-    public function current()
-    {
-        $current = current($this->response);
-        $this->lastItemToken = $current->token;
-        return new $this->classType($current);
-    }
+    abstract public function current();
 
     /**
      * Move forward to next element
@@ -47,6 +40,11 @@ class AfterIterator implements Iterator
      */
     public function next()
     {
+        $current = current($this->response);
+        if ($current) {
+            $this->lastItemToken = $current->token;
+        }
+
         $next = next($this->response);
         if ($next === false) {
             usleep( $this->page > 1 ? $this->requestDelayMs : 0 );
