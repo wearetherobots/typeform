@@ -2,6 +2,7 @@
 namespace WATR;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\RequestOptions;
 use WATR\Iterators\AfterIterator;
 use WATR\Iterators\FormIterator;
 use WATR\Iterators\PageIterator;
@@ -105,6 +106,20 @@ class Typeform
               'json' => (array) $form->getRaw(),
             ]
         );
+    }
+
+    public function updateForm(string $formId, array $json)
+    {
+        $this->http->put('/forms/' . $formId, [
+            RequestOptions::JSON => $json
+        ]);
+    }
+
+    public function patchForm(string $formId, array $json)
+    {
+        $this->http->patch('/forms/' . $formId, [
+            RequestOptions::JSON => $json
+        ]);
     }
 
     /**
