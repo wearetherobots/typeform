@@ -22,6 +22,8 @@ class Answer
      */
     public $field_identifier;
 
+    public $ref;
+
     /**
      * constructor
      */
@@ -29,6 +31,22 @@ class Answer
     {
         $this->type = $object->type;
         $this->field_identifier = $object->field->id;
+        $this->ref = $object->field->ref;
         $this->answer = $object->{$this->type};
+    }
+
+    public function getRef()
+    {
+        return $this->ref;
+    }
+
+    public function getAnswer()
+    {
+        return $this->answer;
+    }
+
+    public function getType()
+    {
+        return $this->type;
     }
 }
