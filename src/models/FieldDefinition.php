@@ -1,12 +1,14 @@
 <?php
 
 namespace WATR\Models;
+use WATR\Traits\jsonConverter;
 
 /**
  * Field Model
  */
 class FieldDefinition
 {
+    use jsonConverter;
     /**
      * @var string unique identifier
      */
@@ -52,6 +54,8 @@ class FieldDefinition
      */
     public function __construct($object)
     {
+        $object = $this->toObject($object);
+
         $this->id = $object->id;
         $this->title = $object->title;
         if(isset($object->ref))

@@ -4,12 +4,14 @@ namespace WATR\Models;
 
 use WATR\Models\Choice;
 use WATR\Models\Field;
+use WATR\Traits\jsonConverter;
 
 /**
  * FieldProperty Model
  */
 class FieldProperty
 {
+    use jsonConverter;
     /**
      * @var boolean randomize
      */
@@ -55,6 +57,8 @@ class FieldProperty
      */
     public function __construct($object, bool $group)
     {
+        $object = $this->toObject($object);
+
         if(isset($object->randomize))
         {
             $this->randomize = $object->randomize;

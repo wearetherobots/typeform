@@ -1,12 +1,14 @@
 <?php
 
 namespace WATR\Models;
+use WATR\Traits\jsonConverter;
 
 /**
  * Screen Models
  */
 class Screen
 {
+    use jsonConverter;
     /**
      * @var string unique reference
      */
@@ -32,6 +34,8 @@ class Screen
      */
     public function __construct($object)
     {
+        $object = $this->toObject($object);
+
         $this->ref = $object->ref;
         $this->title = $object->title;
         $this->properties = new Property($object->properties);

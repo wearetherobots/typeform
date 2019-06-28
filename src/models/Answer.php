@@ -1,12 +1,14 @@
 <?php
 
 namespace WATR\Models;
+use WATR\Traits\jsonConverter;
 
 /**
  * Field Model
  */
 class Answer
 {
+    use jsonConverter;
     /**
      * @var Validation
      */
@@ -29,6 +31,8 @@ class Answer
      */
     public function __construct($object)
     {
+        $object = $this->toObject($object);
+
         $this->type = $object->type;
         $this->field_identifier = $object->field->id;
         $this->ref = $object->field->ref;

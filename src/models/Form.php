@@ -6,12 +6,14 @@ use WATR\Models\Field;
 use WATR\Models\Link;
 use WATR\Models\Reference;
 use WATR\Models\Screen;
+use WATR\Traits\jsonConverter;
 
 /**
  * Form Model
  */
 class Form
 {
+    use jsonConverter;
     /**
      * @var string Typeform unique identifier
      */
@@ -72,6 +74,8 @@ class Form
      */
     public function __construct($json)
     {
+        $json = $this->toObject($json);
+
         $this->raw = $json;
         $this->id = $json->id;
         $this->title = $json->title;

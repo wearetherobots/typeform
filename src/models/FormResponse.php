@@ -1,12 +1,14 @@
 <?php
 
 namespace WATR\Models;
+use WATR\Traits\jsonConverter;
 
 /**
  * FormResponse Model
  */
 class FormResponse
 {
+    use jsonConverter;
     /**
      * @var string Form identifier
      */
@@ -49,6 +51,7 @@ class FormResponse
      */
     public function __construct($json)
     {
+        $json = $this->toObject($json);
         $this->raw = $json;
 
         if (isset($json->form_id)) {

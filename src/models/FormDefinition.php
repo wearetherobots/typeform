@@ -3,12 +3,14 @@
 namespace WATR\Models;
 
 use WATR\Models\Answer;
+use WATR\Traits\jsonConverter;
 
 /**
  * FormDefinition Model
  */
 class FormDefinition
 {
+    use jsonConverter;
     /**
      * @var string Typeform unique identifier
      */
@@ -29,6 +31,8 @@ class FormDefinition
      */
     public function __construct($json)
     {
+        $json = $this->toObject($json);
+
         $this->id = $json->id;
         $this->title = $json->title;
 

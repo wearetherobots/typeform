@@ -4,12 +4,14 @@ namespace WATR\Models;
 
 use WATR\Models\FieldProperty;
 use WATR\Models\Validation;
+use WATR\Traits\jsonConverter;
 
 /**
  * Field Model
  */
 class Field
 {
+    use jsonConverter;
     /**
      * @var string unique identifier
      */
@@ -45,6 +47,8 @@ class Field
      */
     public function __construct($object)
     {
+        $object = $this->toObject($object);
+
         $this->id = $object->id;
         $this->title = $object->title;
         $this->ref = $object->ref;
