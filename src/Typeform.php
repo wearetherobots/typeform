@@ -78,21 +78,50 @@ class Typeform
 //        return $responses;
     }
 
+
     /**
-     * Register webhook for form responses
+     * @param string $form_id
+     * @param string $url
+     * @param string|null $secret
+     * @param string $tag
+     * @return mixed
      */
-    public function registerWebhook($form, string $url, string $tag = "response")
+    public function registerWebhook(string $form_id, string $url, string $secret = null, string $tag = "response")
     {
+        $json = [
+            'url' => $url,
+            'enabled' => true,
+        ];
+
+        if ($secret !== null) {
+            $json['secret'] = $secret;
+        }
+
         $response = $this->http->put(
-            "/forms/" . $form . "/webhooks/" . $tag,
+            "/forms/" . $form_id . "/webhooks/" . $tag,
             [
-                'json' => [
-                    'url' => $url,
-                    'enabled' => true,
-                ]
+                'json' => $json
             ]
         );
         return json_decode($response->getBody());
+    }
+
+    /**
+     * @param string $formId
+     * @param string $tag
+     * @return bool
+     * @throws \Exception
+     */
+    public function unRegisterWebhook(string $formId, string $tag = "response")
+    {
+        $response = $this->http->delete("/forms/" . $formId . "/webhooks/" . $tag);
+
+        $statusCode = $response->getStatusCode();
+        if ($statusCode < 200 || $statusCode > 300) {
+            throw new \Exception('Failed to unregister webhook, form_id: ' . $formId . ', tag: ' . $tag);
+        }
+
+        return true;
     }
 
 
@@ -129,4 +158,17 @@ class Typeform
     {
         return new WebhookResponse($json);
     }
+
+    public static function verifyWebhookResponse($receiverSignature, $body, $secret)
+    {
+        $actualSignature = 'sha256=' . base64_encode(hash_hmac('sha256', $body, $secret, true));
+        return $receiverSignature === $actualSignature;
+    }
+
+    public static function encodeBody($body, $secret)
+    {
+        $actualSignature = 'sha256=' . base64_encode(hash_hmac('sha256', $body, $secret, true));
+        return $actualSignature;
+    }
+
 }
