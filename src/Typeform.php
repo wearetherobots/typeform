@@ -137,6 +137,11 @@ class Typeform
         );
     }
 
+    public function createForm(array $json)
+    {
+        $this->http->put('/forms', $json);
+    }
+
     public function updateForm(string $formId, array $json)
     {
         $this->http->put('/forms/' . $formId, [
