@@ -57,8 +57,7 @@ class Typeform
     public function getForm($formId)
     {
         $response = $this->http->get("/forms/" . $formId);
-        $body = json_decode($response->getBody());
-        return new Form($body);
+        return new Form($response->getBody());
     }
 
     /**

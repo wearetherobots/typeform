@@ -76,7 +76,7 @@ class Form
     {
         $json = $this->toObject($json);
 
-        $this->raw = $json;
+        $this->raw = $this->toJson($json);
         $this->id = $json->id;
         $this->title = $json->title;
 
