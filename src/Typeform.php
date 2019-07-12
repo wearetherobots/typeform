@@ -57,7 +57,8 @@ class Typeform
     public function getForm($formId)
     {
         $response = $this->http->get("/forms/" . $formId);
-        return new Form($response->getBody());
+        $body = json_decode($response->getBody()->getContents());
+        return new Form($body);
     }
 
     /**
@@ -136,9 +137,16 @@ class Typeform
         );
     }
 
+    /**
+     * @param array $json
+     * @return Form
+     */
     public function createForm(array $json)
     {
-        $this->http->put('/forms', $json);
+        $response = $this->http->post('/forms', [
+            RequestOptions::JSON => $json
+        ]);
+        return new Form($response->getBody()->getContents());
     }
 
     public function updateForm(string $formId, array $json)
