@@ -103,7 +103,7 @@ class Form
             }
         }
 
-        $this->settings = new Link($json->_links);
+        $this->link = new Link($json->_links);
 
         if (isset($json->fields)) {
             foreach ($json->fields as $field) {
