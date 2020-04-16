@@ -64,7 +64,7 @@ class Typeform
     }
 
     /**
-     * Register webhook for form
+     * Register webhook for form responses
      */
     public function registerWebhook($form, string $url, string $tag = "response")
     {
