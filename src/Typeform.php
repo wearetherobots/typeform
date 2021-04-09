@@ -164,6 +164,17 @@ class Typeform
     }
 
     /**
+     * Delete typeform by form id.
+     * @param string $formId
+     * @return \Psr\Http\Message\ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function deleteForm(string $formId)
+    {
+        return $this->http->delete('/forms/' . $formId);
+    }
+
+    /**
      * Parse incoming webhook
      */
     public static function parseWebhook($json)
