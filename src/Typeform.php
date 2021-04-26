@@ -78,6 +78,25 @@ class Typeform
 //        return $responses;
     }
 
+    /**
+     * Delete form responses
+     * 
+     * @param string $formId id of the form
+     * @param array $queryParams contains a key 'included_response_ids' that is a
+     * comma-separated list of response_id values of the responses to delete
+     */
+    public function deleteResponses($formId, array $queryParams = [])
+    {
+        $response = $this->http->delete("/forms/" . $formId . "/responses", $queryParams);
+
+        $statusCode = $response->getStatusCode();
+        if ($statusCode < 200 || $statusCode > 300) {
+            throw new \Exception('Failed to delete responses, form_id: ' . $formId . ', query params :' . json_encode($queryParams));
+        }
+
+        return true;
+    }
+
 
     /**
      * @param string $form_id
