@@ -11,10 +11,10 @@
     }
   ],
   "require": {
-    "guzzlehttp/guzzle": "~6.0"
+    "guzzlehttp/guzzle": "~6.0|^7.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~7",
+    "phpunit/phpunit": "~7|^8.0",
     "psy/psysh": "@stable",
     "php-vcr/php-vcr": "^1.4"
   },
